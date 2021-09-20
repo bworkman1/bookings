@@ -32,7 +32,7 @@ func (m *Repository) Home(w http.ResponseWriter, r *http.Request) {
 	remoteIP := r.RemoteAddr
 	m.App.Session.Put(r.Context(), "remote_ip", remoteIP)
 
-	render.Template(w, "home.page.tmpl", &models.TemplateData{})
+	render.Template(w, "home.page.html", &models.TemplateData{})
 }
 
 func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
@@ -42,23 +42,27 @@ func (m *Repository) About(w http.ResponseWriter, r *http.Request) {
 	remoteIP := m.App.Session.GetString(r.Context(), "remote_ip")
 	stringMap["remote_ip"] = remoteIP
 
-	render.Template(w, "about.page.tmpl", &models.TemplateData{
+	render.Template(w, "about.page.html", &models.TemplateData{
 		StringMap: stringMap,
 	})
 }
 
 func (m *Repository) GeneralQuarters(w http.ResponseWriter, r *http.Request) {
-	render.Template(w, "general-quarters.page.tmpl", &models.TemplateData{})
+	render.Template(w, "general-quarters.page.html", &models.TemplateData{})
 }
 
 func (m *Repository) MajorsSuite(w http.ResponseWriter, r *http.Request) {
-	render.Template(w, "majors-suite.page.tmpl", &models.TemplateData{})
+	render.Template(w, "majors-suite.page.html", &models.TemplateData{})
 }
 
 func (m *Repository) MakeReservation(w http.ResponseWriter, r *http.Request) {
-	render.Template(w, "make-reservation.page.tmpl", &models.TemplateData{})
+	render.Template(w, "make-reservation.page.html", &models.TemplateData{})
 }
 
 func (m *Repository) ContactUs(w http.ResponseWriter, r *http.Request) {
-	render.Template(w, "contact-us.page.tmpl", &models.TemplateData{})
+	render.Template(w, "contact-us.page.html", &models.TemplateData{})
+}
+
+func (m *Repository) Reservation(w http.ResponseWriter, r *http.Request) {
+	render.Template(w, "reservation.page.html", &models.TemplateData{})
 }

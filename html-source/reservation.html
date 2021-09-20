@@ -129,43 +129,7 @@
 		<script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/js/datepicker-full.min.js"></script>
 
 		<script>
-			// let myEl = document.getElementById("myParagraph")
-			// myEl.classList.add("red-text")
-
-			(function () {
-				'use strict'
-
-				// Fetch all the forms we want to apply custom Bootstrap validation styles to
-				var forms = document.querySelectorAll('.needs-validation')
-
-				// Loop over them and prevent submission
-				Array.prototype.slice.call(forms)
-						.forEach(function (form) {
-							form.addEventListener('submit', function (event) {
-								if (!form.checkValidity()) {
-									event.preventDefault()
-									event.stopPropagation()
-								}
-
-								form.classList.add('was-validated')
-							}, false)
-						})
-			})()
-
-			document.getElementById("colorButton").addEventListener("click", function () {
-				let myEl = document.getElementById("myParagraph")
-
-				if(myEl.classList.contains("red-text")){
-					myEl.classList.remove("red-text")
-				} else {
-					myEl.classList.add("red-text")
-				}
-			})
-
-			var elem = document.getElementById("reservation-dates")
-			const datepicker = new Datepicker(elem, {
-				buttonClass: 'btn',
-			});
+			console.log("Hello");
 
 		</script>
 	</body>
