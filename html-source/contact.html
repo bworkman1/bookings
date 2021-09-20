@@ -1,29 +1,30 @@
-{{define "base"}}
 <!doctype html>
 <html lang="en">
+	
+	<head>
+		<!-- Required meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- Bootstrap CSS -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
-        <!-- Bootstrap CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+		<title>Generals Quarters</title>
+		
+		<style type="text/css">
+			header {
+				margin-bottom: 75px;
+			}
+			footer {
+				background-color: #3d3d3d;
+				margin-top: 30px;
+				color: #fff;
+			}
+		</style>		
+	</head>
 
-        <title>Swanky Rentals</title>
-
-        <style type="text/css">
-            footer {
-                background-color: #000;
-                margin-top: 30px;
-                color: #fff;
-            }
-        </style>
-    </head>
-
-    <body>
-
-        <header>
+	<body>
+		<header>
 			<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
 				<div class="container-fluid">
 					<a class="navbar-brand" href="#">Navbar</a>
@@ -33,39 +34,45 @@
 					<div class="collapse navbar-collapse" id="navbarCollapse">
 						<ul class="navbar-nav me-auto mb-2 mb-md-0">
 							<li class="nav-item">
-								<a class="nav-link active" aria-current="page" href="/">Home</a>
+								<a class="nav-link active" aria-current="page" href="index.html">Home</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="/about">About</a>
+								<a class="nav-link" href="about.html">About</a>
 							</li>
 							<li class="nav-item dropdown">
 								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
 									Rooms
 								</a>
 								<ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<li><a class="dropdown-item" href="/general-quarters">General Quarters</a></li>
-									<li><a class="dropdown-item" href="/majors-suite">Major's Suite</a></li>
+									<li><a class="dropdown-item" href="generals.html">General Quarters</a></li>
+									<li><a class="dropdown-item" href="majors.html">Major's Suite</a></li>
 								</ul>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="/make-reservation" tabindex="-1" aria-disabled="true">Book Now</a>
+								<a class="nav-link" href="reservation.html" tabindex="-1" aria-disabled="true">Book Now</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link" href="/contact-us" tabindex="-1" aria-disabled="true">Contact</a>
+								<a class="nav-link" href="contact.html" tabindex="-1" aria-disabled="true">Contact</a>
 							</li>
 						</ul>
 					</div>
 				</div>
 			</nav>
 		</header>
+		
+		<div class="container">
+			
+			<div class="row">
+				<div class="col">
+					<h1>Contact Page Coming Soon</h1>
+				</div>
+			</div>
+			
+		</div><!-- /.container -->
 
-        {{block "content" .}}
 
-        {{end}}
-
-
-        <!-- FOOTER -->
-		<footer class="fixed-bottom">
+		<!-- FOOTER -->
+		<footer>
 			<div class="container">
 				<div class="row">
 					<div class="col">Home</div>
@@ -80,11 +87,5 @@
 
 		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
 		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
-
-		{{block "js" .}}
-
-        {{end}}
 	</body>
 </html>
-
-{{end}}
