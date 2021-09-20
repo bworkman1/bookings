@@ -1,0 +1,83 @@
+{{template "base" .}}
+
+{{define "css"}}
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/css/datepicker.min.css">
+{{end}}
+
+{{define "content"}}
+	<br>
+	<div class="container">
+
+		<div class="row">
+			<div class="col-md-8 offset-md-2">
+				<h1 class="mt-5">Search for Availability</h1>
+
+				<form action="reservation" class="needs-validation" method="GET" novalidate>
+
+					<div class="row">
+
+						<div class="col">
+
+							<div class="row" id="reservation-dates">
+								<div class="col">
+									<input class="form-control" type="input" name="start" placeholder="Arrival" required>
+								</div>
+								<div class="col">
+									<input class="form-control" type="input" name="end" placeholder="Departure" required>
+								</div>
+							</div>
+
+						</div>
+
+					</div>
+					<hr>
+					<button type="submit" class="btn btn-primary">Search Availability</button>
+
+				</form>
+
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<p id="myParagraph"></p>
+			</div>
+		</div>
+
+	</div><!-- /.container -->
+
+{{end}}
+
+{{define "js"}}
+	<script src="https://cdn.jsdelivr.net/npm/vanillajs-datepicker@1.1.4/dist/js/datepicker-full.min.js"></script>
+
+	<script>
+		(function () {
+			'use strict'
+
+			// Fetch all the forms we want to apply custom Bootstrap validation styles to
+			let forms = document.querySelectorAll('.needs-validation')
+
+			// Loop over them and prevent submission
+			Array.prototype.slice.call(forms)
+					.forEach(function (form) {
+						form.addEventListener('submit', function (event) {
+							if (!form.checkValidity()) {
+								event.preventDefault()
+								event.stopPropagation()
+							}
+
+							form.classList.add('was-validated')
+						}, false)
+					})
+
+
+			const elem = document.getElementById('reservation-dates');
+			const rangePicker = new DateRangePicker(elem, {
+				format: "mm-dd-yyyy"
+			});
+
+		})()
+
+	</script>
+{{end}}
